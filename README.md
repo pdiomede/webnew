@@ -14,7 +14,7 @@ Personal portfolio and resume site, live at [pdiomede.com](https://pdiomede.com)
 - Data-driven carousels with arrows, dots, swipe, and global keyboard navigation
 - Layered logo fallback so a broken image never leaves a blank slide
 - External JavaScript only (`js/`), compatible with a strict `script-src 'self'` CSP
-- SEO and social tags: canonical, Open Graph, Twitter cards, JSON-LD, custom share image
+- SEO: canonical, Open Graph, Twitter cards, JSON-LD, share image, robots.txt, sitemap.xml
 
 ## Develop
 
@@ -30,7 +30,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.1.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
+Current: **1.2.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
 
 ## License
 
