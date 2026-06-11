@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static personal portfolio / résumé site for Paolo Diomede, styled after a LinkedIn profile. Plain HTML: each page bundles its own inline `<style>` block; the JavaScript (data arrays + rendering logic) lives in external files under `js/`. `images/` holds local logo/photo assets.
 
-**CSP note:** the site is deployed behind a strict Content-Security-Policy (`script-src 'self'`). That is why all JavaScript is in external `js/*.js` files and there are **no inline `<script>` blocks and no inline `on*=` event handlers** anywhere in the HTML (image fallbacks are wired with `addEventListener` instead). Inline `<style>` and `style=` attributes are fine (the CSP allows inline styles). Do not reintroduce inline scripts or inline event handlers, or they will be blocked in production.
+**CSP note:** the site is deployed behind a strict Content-Security-Policy (`script-src 'self'`). That is why all JavaScript is in external `js/*.js` files and there are **no inline `<script>` blocks and no inline `on*=` event handlers** anywhere in the HTML (image fallbacks are wired with `addEventListener` instead). Inline `<style>` and `style=` attributes are fine (the CSP allows inline styles). Do not reintroduce inline scripts or inline event handlers, or they will be blocked in production. Exception: the `<script type="application/ld+json">` block on `index.html` is an inert SEO data block, never executed, and is not affected by `script-src`.
+
+Every page carries SEO/social tags in the `<head>` (canonical, Open Graph, Twitter card) pointing at the production domain `https://pdiomede.com` and the share image `images/og-image.png` (1200x630). Keep these in sync when adding pages or changing titles/descriptions.
 
 There is **no build step, no package manager, no framework, and no tests**. To work on it, edit the HTML file and refresh the browser. Either open a file directly (`open index.html`) or serve the site with the preconfigured static server in `.claude/launch.json` (`python3 -m http.server 8742`), which the Claude Preview tools can launch as `static-site`.
 

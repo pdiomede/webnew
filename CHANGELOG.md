@@ -4,6 +4,16 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-06-12
+
+### Added
+- SEO tags on every page: canonical URL, author, theme color, Open Graph, and Twitter card metadata.
+- JSON-LD `Person` structured data on the home page (inert data block, safe under the strict CSP).
+- Custom social share image (`images/og-image.png`, 1200x630) shown as the link preview on X, LinkedIn, Telegram, and other platforms.
+
+### Changed
+- README rewritten to be compact.
+
 ## [1.0.0] - 2026-06-12
 
 First public release of the portfolio site.
