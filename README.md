@@ -75,6 +75,10 @@ The JavaScript lives in external files (not inline) so the site works under a st
 
 See `CLAUDE.md` for detailed architecture notes, the hero-animation internals, and content conventions.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes. Current version: **1.0.0**.
+
 ## License
 
 Personal project. Content and images are owned by Paolo Diomede.

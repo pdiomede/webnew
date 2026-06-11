@@ -1,0 +1,28 @@
+# Changelog
+
+All notable changes to this project are documented in this file. The format is based on
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-06-12
+
+First public release of the portfolio site.
+
+### Added
+- Multi-page static site: home (`index.html`), education (`education.html`), and projects (`projects.html`), sharing the nav, hero, and footer.
+- Current Role card plus a data-driven "The Journey So Far" experience carousel (15 roles).
+- "Education & Certifications" carousel: Harvard Business School Online programs and a Computer Science degree from the University of L'Aquila.
+- Hover-driven animated hero banner (CSS and SVG): Hokusai-style layered waves with horizontal drift and vertical heave, gulls that fly across after a short delay, and a sunrise-to-sunset day cycle.
+- Avatar fireworks on hover.
+- Carousel controls: previous/next buttons, pagination dots, sideways scrolling, and keyboard navigation (Left/Right arrows work from anywhere on the page).
+- Layered logo resolution with graceful fallback (local file, live fetch, colored monogram); institution logos and names link to their websites.
+- Hokusai "seal" brand mark that links to the home page.
+- Favicons, per-page meta descriptions, and accessible labels for carousel dots and social links.
+- Responsive layout, including a wrapping mobile navigation row.
+
+### Security
+- All JavaScript lives in external `js/` files and no inline scripts or inline event handlers remain, so the site runs under a strict `script-src 'self'` Content-Security-Policy with no policy changes required.
+
+### Accessibility
+- Reduced-motion support for the hero animations and for page scrolling.
+- Accessible names on icon-only social links and on carousel pagination dots.
