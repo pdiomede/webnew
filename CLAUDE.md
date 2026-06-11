@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static personal portfolio / résumé site for Paolo Diomede, styled after a LinkedIn profile. Plain HTML: each page bundles its own inline `<style>` block, page content as JavaScript data arrays (where applicable), and the rendering logic. `images/` holds local logo/photo assets.
+A static personal portfolio / résumé site for Paolo Diomede, styled after a LinkedIn profile. Plain HTML: each page bundles its own inline `<style>` block; the JavaScript (data arrays + rendering logic) lives in external files under `js/`. `images/` holds local logo/photo assets.
+
+**CSP note:** the site is deployed behind a strict Content-Security-Policy (`script-src 'self'`). That is why all JavaScript is in external `js/*.js` files and there are **no inline `<script>` blocks and no inline `on*=` event handlers** anywhere in the HTML (image fallbacks are wired with `addEventListener` instead). Inline `<style>` and `style=` attributes are fine (the CSP allows inline styles). Do not reintroduce inline scripts or inline event handlers, or they will be blocked in production.
 
 There is **no build step, no package manager, no framework, and no tests**. To work on it, edit the HTML file and refresh the browser. Either open a file directly (`open index.html`) or serve the site with the preconfigured static server in `.claude/launch.json` (`python3 -m http.server 8742`), which the Claude Preview tools can launch as `static-site`.
 
@@ -14,7 +16,7 @@ Each page is a **standalone clone**: the full `<style>` block, nav, hero (banner
 
 - `index.html`: hero, the **Current Role** card (`#now`), and **The Journey So Far** carousel (`#journey`), driven by the `experiences[]` array.
 - `education.html`: hero plus the **Education & Certifications** carousel (`#education`), driven by the `education[]` array.
-- `projects.html`: hero plus a static **Coming Soon** placeholder (`#projects`). No carousel, no `<script>`.
+- `projects.html`: hero plus a static **Coming Soon** placeholder (`#projects`). No carousel; its only script (`js/projects.js`) wires the avatar image fallback.
 
 Nav conventions: the brand block (`a.brand`, logo + name) links to `index.html` on every page. The four nav links are Current Role, Journey, Projects, Education; on `index.html` the first two are in-page anchors (`#now`, `#journey`), on other pages they point to `index.html#now` / `index.html#journey`, and each page's own section is a local anchor. Keep these cross-links in sync when adding pages.
 
@@ -38,17 +40,17 @@ Banner layers, bottom to top (all inside `.hero-banner`, which has `overflow:hid
 
 ## Carousel architecture
 
-The carousel pages are data-driven: content lives in an array near the bottom of the file (`experiences[]`, `education[]`), not in HTML. A generic `makeCarousel(items, trackEl, dotsEl, prevBtn, nextBtn, renderFn)` renders each array into a horizontal scroll-snap carousel, paired with a per-page render function (`renderExperience` in `index.html`, `renderEducation` in `education.html`). To add or change a job or certification, edit the array entry; never hand-write slide markup. Like the styles, `makeCarousel` and the logo helpers are duplicated into both carousel pages. `makeCarousel` also registers a document-level `keydown` handler so ArrowLeft / ArrowRight navigate the carousel no matter where focus is (modifier-held keys and editable elements are ignored; if the carousel is fully off-screen it is scrolled into view first). This relies on one carousel per page; a second carousel on the same page would need the handler scoped.
+The carousel pages are data-driven: content lives in an array inside the page's external script (`experiences[]` in `js/index.js`, `education[]` in `js/education.js`), not in HTML. A generic `makeCarousel(items, trackEl, dotsEl, prevBtn, nextBtn, renderFn)` renders each array into a horizontal scroll-snap carousel, paired with a per-page render function (`renderExperience` / `renderEducation`). To add or change a job or certification, edit the array entry; never hand-write slide markup. The CSS `<style>` block is still duplicated inline in every page (change one, change all), but the JavaScript now lives per-page in `js/`: `makeCarousel` and the logo helpers are duplicated across `js/index.js` and `js/education.js` (standalone-clone convention). `makeCarousel` also registers a document-level `keydown` handler so ArrowLeft / ArrowRight navigate the carousel no matter where focus is (modifier-held keys and editable elements are ignored; if the carousel is fully off-screen it is scrolled into view first). This relies on one carousel per page; a second carousel on the same page would need the handler scoped.
 
 ### Logo resolution (layered fallback)
 
 Each entry resolves its logo through `logoChip()` so a broken image never leaves a blank slide:
 
-1. `logo:` is a local file under `images/` (rendered in a white chip).
-2. `domain:` is fetched live from `https://logo.clearbit.com/<domain>`, falling back via `logoStep()` to a Google favicon, then to a colored monogram.
+1. `logo:` is a local file under `images/` (rendered in a white chip; add `logoFull:true` for a full-bleed square logo that fills the chip edge-to-edge).
+2. `domain:` is fetched live from `https://logo.clearbit.com/<domain>`, falling back to a Google favicon, then to a colored monogram.
 3. Neither: a colored monogram chip built from `initials` + `color`.
 
-Local images also degrade to a monogram via the inline `onerror="chipMono(...)"` handler, so keep `initials` and `color` set on every entry.
+`logoChip()` emits the chip markup with `data-init` / `data-color` (and `data-fav` for the domain path) but **no inline `onerror`** (CSP). After `makeCarousel` injects each slide, it attaches the `onLogoError` handler to the chip images via `addEventListener`; that handler walks the fallback chain (favicon, then monogram via `chipMono`). Keep `initials` and `color` set on every entry. An optional `url:` makes both the logo (wrapped in `a.logo-link`) and the company/school name link to that site in a new tab.
 
 ### Styling
 

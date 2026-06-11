@@ -62,10 +62,16 @@ No build or restart is needed; static files go live immediately.
 ├── index.html        # home: hero, current role, journey carousel
 ├── education.html    # education & certifications carousel
 ├── projects.html     # projects placeholder
+├── js/               # per-page JavaScript (external, CSP-friendly)
+│   ├── index.js
+│   ├── education.js
+│   └── projects.js
 ├── images/           # logos, photo, favicons
 ├── CLAUDE.md         # architecture notes and conventions
 └── README.md
 ```
+
+The JavaScript lives in external files (not inline) so the site works under a strict `script-src 'self'` Content-Security-Policy.
 
 See `CLAUDE.md` for detailed architecture notes, the hero-animation internals, and content conventions.
 
