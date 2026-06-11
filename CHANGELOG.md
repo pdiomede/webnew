@@ -9,6 +9,11 @@ All notable changes to this project are documented in this file. The format is b
 ### Added
 - `robots.txt` and `sitemap.xml` for search engine indexing.
 
+### Fixed
+- Anchor navigation (Current Role, Journey, Projects, Education) no longer hides the top of the target section under the sticky header (`scroll-margin-top`).
+- Social icon tooltips no longer clip off-screen on narrow viewports; they are hidden on small (touch) screens where hover does not apply.
+- Corrected the university name accent in the structured data ("Università degli Studi dell'Aquila").
+
 ## [1.1.0] - 2026-06-12
 
 ### Added
