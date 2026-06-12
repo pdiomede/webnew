@@ -43,7 +43,7 @@
       initials:"HV", color:"#0E1F3D", logo:"images/homevaultlogo.jpg", logoFull:true,
       name:"HomeVault", url:"https://homevault.pro",
       tagline:"DeFi, Bitcoin, Fiat. One dashboard.",
-      category:"Portfolio · Net Worth Tracker",
+      category:"Portfolio · Tracker",
       blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin holdings, stablecoin balances at centralised exchanges, and traditional cash, stocks, and bonds, all from one self-hosted database. Deposits and withdrawals are tracked separately, so you always know exactly what you own and what is pure yield."
     },
     {
