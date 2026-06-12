@@ -63,6 +63,7 @@ Theme colors are CSS custom properties on `:root` (the `--li-*` LinkedIn-blue pa
 ## Conventions
 
 - **No em dashes** in page content (the long `U+2014` dash). Date ranges use the en dash (`U+2013`), which is the correct range dash and is intentional. Page titles use a pipe separator (`Paolo Diomede | ...`).
+- **Cache-busting JS version**: each page loads its script with a version query (`<script src="js/projects.js?v=1.3.2">`). The site sits behind Cloudflare, which caches `js/*.js` for hours, so a deploy that changes a JS file without changing the query string will keep serving the stale cached copy (symptom: a carousel renders no cards in production while working locally). Bump the `?v=` on the affected page(s) whenever you change a `js/*.js` file, keeping it aligned with the version in `README.md` / `CHANGELOG.md`.
 
 ## Content / fact-checking notes
 

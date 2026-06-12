@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2026-06-12
+
+### Fixed
+- Projects carousel rendered no cards in production while working locally: the CDN (Cloudflare) was serving a stale cached copy of `js/projects.js`. Added a version query string to the page script tags (`js/projects.js?v=1.3.2`, and the same on `index.html` / `education.html`) so each deploy requests a fresh URL the CDN has not cached. Bump the `?v=` value whenever a `js/*.js` file changes.
+
 ## [1.3.1] - 2026-06-12
 
 ### Added
