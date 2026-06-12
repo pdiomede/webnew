@@ -30,7 +30,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.3.2**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
+Current: **1.3.3**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
 
 ## License
 
