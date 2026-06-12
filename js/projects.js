@@ -47,7 +47,7 @@
       blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin holdings, stablecoin balances at centralised exchanges, and traditional cash, stocks, and bonds, all from one self-hosted database. Deposits and withdrawals are tracked separately, so you always know exactly what you own and what is pure yield."
     },
     {
-      initials:"GT", color:"#6F4CFF",
+      initials:"GT", color:"#0A0E1F", logo:"images/graphtoolspro.jpg", logoFull:true,
       name:"Graph Tools Pro", url:"https://graphtools.pro/",
       tagline:"Useful dashboards for The Graph ecosystem",
       category:"Analytics · The Graph",

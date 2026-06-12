@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2026-06-12
+
+### Added
+- Real logo for the Graph Tools Pro project card (`images/graphtoolspro.jpg`), replacing its monogram placeholder. All four project cards now use their real logos.
+
+### Changed
+- Updated `CLAUDE.md` to document the Projects carousel (previously described as a "Coming Soon" placeholder).
+
 ## [1.3.0] - 2026-06-12
 
 ### Added
