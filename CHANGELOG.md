@@ -4,6 +4,11 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4] - 2026-06-12
+
+### Changed
+- Project card category labels (e.g. "Security · Web Tool") now use a deep navy color (`#001d3d`), scoped to the Projects page so the Journey/Education location text is unchanged.
+
 ## [1.3.3] - 2026-06-12
 
 ### Changed
