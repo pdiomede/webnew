@@ -4,64 +4,29 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.4] - 2026-06-12
-
-### Changed
-- Project card category labels (e.g. "Security · Web Tool") now use a deep navy color (`#001d3d`), scoped to the Projects page so the Journey/Education location text is unchanged.
-
-## [1.3.3] - 2026-06-12
-
-### Changed
-- Rewrote the Current Role (Certora) card description.
-- Removed the location ("Rome, Italy") from the Current Role date line.
-- Replaced the Current Role focus tags with: Business Development, Client Advisory, Technical Pre-Sales, Customer Success, Security Strategy.
-
-## [1.3.2] - 2026-06-12
-
-### Fixed
-- Projects carousel rendered no cards in production while working locally: the CDN (Cloudflare) was serving a stale cached copy of `js/projects.js`. Added a version query string to the page script tags (`js/projects.js?v=1.3.2`, and the same on `index.html` / `education.html`) so each deploy requests a fresh URL the CDN has not cached. Bump the `?v=` value whenever a `js/*.js` file changes.
-
-## [1.3.1] - 2026-06-12
-
-### Added
-- Real logo for the Graph Tools Pro project card (`images/graphtoolspro.jpg`), replacing its monogram placeholder. All four project cards now use their real logos.
-
-### Changed
-- Updated `CLAUDE.md` to document the Projects carousel (previously described as a "Coming Soon" placeholder).
-
-## [1.3.0] - 2026-06-12
-
-### Added
-- Projects page now has a data-driven carousel (replacing the "Coming Soon" placeholder), matching the Journey and Education carousels with arrows, dots, sideways scroll, and global keyboard navigation.
-- Four projects: Url Reporter, Magellan, HomeVault, and Graph Tools Pro, each linking out to its site with an "opens in a new tab" icon next to the title.
-
-### Changed
-- Project card logos are 20% larger than the carousel logos on other pages (scoped to the Projects page).
-- Projects page meta description and social (Open Graph / Twitter) descriptions updated to name the live projects instead of "coming soon".
-
-## [1.2.0] - 2026-06-12
-
-### Added
-- `robots.txt` and `sitemap.xml` for search engine indexing.
-
-### Changed
-- Social share image no longer shows the domain text.
-- Social (Open Graph / Twitter) descriptions shortened to under 125 characters so previews do not truncate on mobile.
-
-### Fixed
-- Anchor navigation (Current Role, Journey, Projects, Education) no longer hides the top of the target section under the sticky header (`scroll-margin-top`).
-- Social icon tooltips no longer clip off-screen on narrow viewports; they are hidden on small (touch) screens where hover does not apply.
-- Corrected the university name accent in the structured data ("Università degli Studi dell'Aquila").
-
 ## [1.1.0] - 2026-06-12
 
 ### Added
 - SEO tags on every page: canonical URL, author, theme color, Open Graph, and Twitter card metadata.
 - JSON-LD `Person` structured data on the home page (inert data block, safe under the strict CSP).
 - Custom social share image (`images/og-image.png`, 1200x630) shown as the link preview on X, LinkedIn, Telegram, and other platforms.
+- `robots.txt` and `sitemap.xml` for search engine indexing.
+- Projects page now has a data-driven carousel (replacing the "Coming Soon" placeholder), matching the Journey and Education carousels with arrows, dots, sideways scroll, and global keyboard navigation.
+- Four projects: Url Reporter, Magellan, HomeVault, and Graph Tools Pro, each linking out to its site with an "opens in a new tab" icon next to the title. All use their real logos.
 
 ### Changed
 - README rewritten to be compact.
+- Social share image no longer shows the domain text.
+- Social (Open Graph / Twitter) descriptions shortened to under 125 characters so previews do not truncate on mobile. Projects page descriptions updated to name the live projects.
+- Project card logos are 20% larger than the carousel logos on other pages (scoped to the Projects page).
+- Project card category labels (e.g. "Security · Web Tool") use a deep navy color (`#001d3d`), scoped to the Projects page.
+- Current Role (Certora) card: rewrote description, removed location ("Rome, Italy") from the date line, updated focus tags to Business Development, Client Advisory, Technical Pre-Sales, Customer Success, Security Strategy.
+
+### Fixed
+- Anchor navigation (Current Role, Journey, Projects, Education) no longer hides the top of the target section under the sticky header (`scroll-margin-top`).
+- Social icon tooltips no longer clip off-screen on narrow viewports; they are hidden on small (touch) screens where hover does not apply.
+- Corrected the university name accent in the structured data ("Università degli Studi dell'Aquila").
+- Projects carousel rendered no cards in production: the CDN (Cloudflare) was serving a stale cached copy of `js/projects.js`. Added version query strings to all page script tags so each deploy requests a fresh URL the CDN has not cached.
 
 ## [1.0.0] - 2026-06-12
 
