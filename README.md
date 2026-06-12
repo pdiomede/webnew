@@ -6,7 +6,7 @@ Personal portfolio and resume site, live at [pdiomede.com](https://pdiomede.com)
 
 - `index.html`: hero, current role (Certora), and the career journey carousel
 - `education.html`: education and certifications carousel
-- `projects.html`: projects (coming soon)
+- `projects.html`: projects carousel (Url Reporter, Magellan, HomeVault, Graph Tools Pro)
 
 ## Features
 
@@ -30,7 +30,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.2.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
+Current: **1.3.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
 
 ## License
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Projects by Paolo Diomede. Selected web3 and security tooling, coming soon." />
+<meta name="description" content="Projects by Paolo Diomede: web3 and security tools including URLReporter, Magellan, HomeVault, and Graph Tools Pro." />
 <link rel="canonical" href="https://pdiomede.com/projects.html" />
 <meta name="author" content="Paolo Diomede" />
 <meta name="theme-color" content="#0A66C2" />
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="https://pdiomede.com/projects.html" />
 <meta property="og:title" content="Paolo Diomede | Projects" />
-<meta property="og:description" content="Projects by Paolo Diomede. Selected web3 and security tooling, coming soon." />
+<meta property="og:description" content="Selected projects by Paolo Diomede, including URLReporter, Magellan, HomeVault, and Graph Tools Pro." />
 <meta property="og:image" content="https://pdiomede.com/images/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -21,7 +21,7 @@
 <meta name="twitter:site" content="@pdiomede" />
 <meta name="twitter:creator" content="@pdiomede" />
 <meta name="twitter:title" content="Paolo Diomede | Projects" />
-<meta name="twitter:description" content="Projects by Paolo Diomede. Selected web3 and security tooling, coming soon." />
+<meta name="twitter:description" content="Selected projects by Paolo Diomede, including URLReporter, Magellan, HomeVault, and Graph Tools Pro." />
 <meta name="twitter:image" content="https://pdiomede.com/images/og-image.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
@@ -202,6 +202,7 @@
   .logo-chip.white img{width:100%;height:100%;object-fit:contain;display:block}
   .logo-chip.full{padding:0;overflow:hidden}
   .logo-chip.full img{object-fit:cover}
+  #projects .logo-chip{width:72px;height:72px;border-radius:16px;font-size:25px}
   .era{font-size:32px;font-weight:800;color:var(--li-blue);line-height:1;margin-top:18px}
   .era small{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-top:5px}
   .side .loc{font-size:12.5px;color:var(--ink-soft);margin-top:14px;display:flex;align-items:flex-start;gap:5px}
@@ -226,15 +227,6 @@
   .dots{display:flex;gap:9px;justify-content:center;margin-top:6px;flex-wrap:wrap}
   .dot{width:9px;height:9px;border-radius:50%;background:#c8d2dc;border:none;cursor:pointer;transition:.2s}
   .dot.active{background:var(--li-blue);width:26px;border-radius:5px}
-
-  /* coming soon */
-  .coming-soon{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
-    padding:80px 34px;text-align:center}
-  .coming-soon .cs-badge{display:inline-flex;align-items:center;gap:7px;background:#eaf3fc;
-    color:var(--li-blue);font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
-    padding:8px 16px;border-radius:20px}
-  .coming-soon h2{font-size:30px;margin-top:18px;letter-spacing:-.3px}
-  .coming-soon p{margin:10px auto 0;color:var(--ink-soft);font-size:15px;max-width:520px}
 
   /* education */
   .education{padding:38px 0 54px}
@@ -322,14 +314,19 @@
     <div class="journey-head">
       <div>
         <div class="section-label" style="margin-bottom:6px">Projects</div>
-        <p>A selection of things I've built.</p>
+        <p>Browse the cards with the arrows, dots, keyboard, or by scrolling sideways.</p>
+      </div>
+      <div class="controls">
+        <button class="nav-btn" id="prev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="nav-btn" id="next" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
-    <div class="coming-soon">
-      <span class="cs-badge"><span class="pulse"></span> In progress</span>
-      <h2>Coming Soon</h2>
-      <p>Selected projects and tools will appear here soon.</p>
-    </div>
+    <div class="track" id="track"></div>
+    <div class="dots" id="dots"></div>
   </div>
 </section>
 

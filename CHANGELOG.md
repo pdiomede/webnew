@@ -4,6 +4,16 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-06-12
+
+### Added
+- Projects page now has a data-driven carousel (replacing the "Coming Soon" placeholder), matching the Journey and Education carousels with arrows, dots, sideways scroll, and global keyboard navigation.
+- Four projects: Url Reporter, Magellan, HomeVault, and Graph Tools Pro, each linking out to its site with an "opens in a new tab" icon next to the title.
+
+### Changed
+- Project card logos are 20% larger than the carousel logos on other pages (scoped to the Projects page).
+- Projects page meta description and social (Open Graph / Twitter) descriptions updated to name the live projects instead of "coming soon".
+
 ## [1.2.0] - 2026-06-12
 
 ### Added
