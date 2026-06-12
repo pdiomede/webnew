@@ -10,6 +10,7 @@ Personal portfolio and resume site, live at [pdiomede.com](https://pdiomede.com)
 
 ## Features
 
+- Light/dark theme toggle (top-right): persists the choice, follows the device setting on first visit, no flash on load
 - Hover-driven hero animation: Hokusai-style waves, flying gulls, and a sunrise-to-sunset sky cycle (pure CSS/SVG, respects reduced motion)
 - Data-driven carousels with arrows, dots, swipe, and global keyboard navigation
 - Layered logo fallback so a broken image never leaves a blank slide
@@ -30,7 +31,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.0.1**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
+Current: **1.0.2**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
 
 ## License
 

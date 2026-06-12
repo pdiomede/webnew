@@ -4,6 +4,15 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-06-12
+
+### Added
+- Dark mode: a toggle in the top-right of the nav. The choice persists in `localStorage` and follows the device's `prefers-color-scheme` on first visit. Implemented via a new shared `js/theme.js` loaded synchronously in `<head>` (CSP-safe, same-origin, no flash of unstyled content) that sets `data-theme` on `<html>`; the dark palette overrides the `:root` color variables.
+
+### Fixed
+- Standalone-clone CSS sync drift: the `.cur-logo a` and `.current-card h2 a` rules existed only on `index.html`. Added them to `education.html` and `projects.html` so the shared `<style>` blocks match again.
+- `education.html` `.slide .role-title` had diverged to italic navy (`font-weight:400;font-style:italic;color:#1B263B`); synced it to the shared bold blue (`font-weight:600;color:var(--li-blue)`).
+
 ## [1.0.1] - 2026-06-12
 
 ### Added
