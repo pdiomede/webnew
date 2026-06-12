@@ -23,6 +23,7 @@ All notable changes to this project are documented in this file. The format is b
 - Current Role (Certora) card: rewrote description, removed location ("Rome, Italy") from the date line, updated focus tags to Business Development, Client Advisory, Technical Pre-Sales, Customer Success, Security Strategy.
 - Rewrote Magellan and Graph Tools Pro project card descriptions to be more concise.
 - Shortened HomeVault category label from "Portfolio · Net Worth Tracker" to "Portfolio · Tracker".
+- Updated `CLAUDE.md`: refreshed cache-buster version example to 1.0.1 and documented the `group:` field on experience entries.
 
 ### Fixed
 - Anchor navigation (Current Role, Journey, Projects, Education) no longer hides the top of the target section under the sticky header (`scroll-margin-top`).
