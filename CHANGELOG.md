@@ -12,6 +12,7 @@ All notable changes to this project are documented in this file. The format is b
 ### Fixed
 - Standalone-clone CSS sync drift: the `.cur-logo a` and `.current-card h2 a` rules existed only on `index.html`. Added them to `education.html` and `projects.html` so the shared `<style>` blocks match again.
 - `education.html` `.slide .role-title` had diverged to italic navy (`font-weight:400;font-style:italic;color:#1B263B`); synced it to the shared bold blue (`font-weight:600;color:var(--li-blue)`).
+- Dark-mode CSS tidy-up: the `html[data-theme="dark"] #projects .loc` override now lives only on `projects.html` alongside the other `#projects` rules, instead of being duplicated (inert) onto `index.html` and `education.html`. The latter two keep byte-identical style blocks.
 
 ## [1.0.1] - 2026-06-12
 
