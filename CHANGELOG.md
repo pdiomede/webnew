@@ -21,6 +21,7 @@ All notable changes to this project are documented in this file. The format is b
 - Project card logos are 20% larger than the carousel logos on other pages (scoped to the Projects page).
 - Project card category labels (e.g. "Security · Web Tool") use a deep navy color (`#001d3d`), scoped to the Projects page.
 - Current Role (Certora) card: rewrote description, removed location ("Rome, Italy") from the date line, updated focus tags to Business Development, Client Advisory, Technical Pre-Sales, Customer Success, Security Strategy.
+- Rewrote Magellan and Graph Tools Pro project card descriptions to be more concise.
 
 ### Fixed
 - Anchor navigation (Current Role, Journey, Projects, Education) no longer hides the top of the target section under the sticky header (`scroll-margin-top`).

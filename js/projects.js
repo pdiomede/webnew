@@ -37,7 +37,7 @@
       name:"Magellan", url:"https://magellan.money/",
       tagline:"Automated SOL/USDC Scalping Grid Trader on Solana, Powered by Jupiter",
       category:"Solana · Trading Bot",
-      blurb:"An automated grid trading bot built for fast-moving Solana markets. It places staggered buy orders across multiple price levels, capturing short-term price swings while built-in controls help protect capital during volatility. Automatic circuit breakers, stop-losses, daily loss limits, gas checks, and principal protection manage risk. A live dashboard tracks open units, P&L, and trades, while Telegram alerts let you monitor and wind down the bot remotely. Paper Mode lets you test with live prices, simulated fees, and slippage before going live."
+      blurb:"An automated grid trading bot for fast-moving Solana markets. It places staggered buy orders to capture short-term price swings, with circuit breakers, stop-losses, daily loss limits, gas checks, and principal protection. A live dashboard tracks positions, P&L, and trades, while Telegram alerts enable remote monitoring and shutdown. Paper Mode tests strategies using live prices, simulated fees, and slippage before launch."
     },
     {
       initials:"HV", color:"#0E1F3D", logo:"images/homevaultlogo.jpg", logoFull:true,
@@ -51,7 +51,7 @@
       name:"Graph Tools Pro", url:"https://graphtools.pro/",
       tagline:"Useful dashboards for The Graph ecosystem",
       category:"Analytics · The Graph",
-      blurb:"A suite of dashboards and analytics tools built for The Graph ecosystem. Explore network activity, monitor indexer performance, track delegation and curation earnings, analyze query fees, review disputes, manage vesting, and discover subgraphs, all from one convenient hub. Designed for indexers, delegators, curators, developers, and ecosystem participants, these tools turn complex onchain data into clear, actionable insights."
+      blurb:"A suite of dashboards and analytics tools for The Graph ecosystem. Monitor network activity and indexer performance, track delegation and curation earnings, analyze query fees, review disputes, manage vesting, and discover subgraphs from one hub. Built for ecosystem participants, these tools turn complex onchain data into clear, actionable insights."
     }
   ];
 
