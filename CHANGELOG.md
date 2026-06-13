@@ -2,6 +2,9 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-06-14
+- **Changed:** the splash role label "Technical Account Manager @" now uses a darker navy (`#003049`) for more presence; the "Certora" link keeps its blue.
+
 ## [1.1.0] - 2026-06-13
 - **Added:** landing splash on the home page — a bare intro (name set in the Oswald webfont, a current-role line, a smaller italic "by night" line, a star-marked italic previous-roles line, social + email icons, and a rotating sphere that opens into a connected-node graph) that fades on click to reveal the full site. A `position:fixed` overlay over the unchanged page (content stays in the DOM, so SEO and URLs are intact) driven by `js/landing.js` (CSP-safe, no flash); light-locked and reduced-motion aware. The nav brand returns to it; deep links skip it.
 - **Added:** email icon (`mailto:me@pdiomede.com`) in the hero social row on every page.
