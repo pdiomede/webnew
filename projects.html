@@ -55,7 +55,7 @@
 
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+    -webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
   .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--ink);
     letter-spacing:2.5px;text-transform:uppercase;font-size:13.5px}
@@ -279,6 +279,7 @@
   html[data-theme="dark"] .socials a::after{background:#283340;color:#E8EAED}
   html[data-theme="dark"] .socials a::before{border-top-color:#283340}
   html[data-theme="dark"] .slide .role-title{color:var(--li-blue-light)}
+  html[data-theme="dark"] .slide .period-line a{color:var(--li-blue-light)}
   html[data-theme="dark"] .nav-btn{color:var(--li-blue-light)}
   html[data-theme="dark"] footer a{color:var(--li-blue-light)}
   html[data-theme="dark"] .section-label{color:var(--li-blue-light)}
@@ -289,7 +290,7 @@
   html[data-theme="dark"] .socials a:hover{border-color:var(--li-blue-light);color:var(--li-blue-light)}
   html[data-theme="dark"] #projects .loc{color:#7FA8D4}
 </style>
-<script src="js/theme.js?v=1.0.2"></script>
+<script src="js/theme.js?v=1.1.0"></script>
 </head>
 <body>
 
@@ -309,6 +310,7 @@
   </div>
 </header>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
@@ -350,6 +352,7 @@
           <a href="https://x.com/pdiomede" target="_blank" rel="noopener" data-tip="Follow me on X" aria-label="X (Twitter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.6l8-9.2L1 2h7l4.8 6.4L18.9 2m-1.2 18h1.9L7.1 4H5.1l12.6 16z"/></svg></a>
           <a href="https://t.me/pdiomede" target="_blank" rel="noopener" data-tip="Message me on Telegram" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.5L18.6 20.2c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.43 2.34c-.27.27-.5.5-1 .5l.36-5.13L17 6.16c.4-.36-.09-.56-.62-.2L6.04 12.6l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6L20.5 2.93c.9-.34 1.69.2 1.44 1.57z"/></svg></a>
           <a href="https://github.com/pdiomede" target="_blank" rel="noopener" data-tip="See my code on GitHub" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.57.67.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg></a>
+          <a href="mailto:me@pdiomede.com" data-tip="Email me" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
         </div>
       </div>
     </div>
@@ -377,6 +380,7 @@
     <div class="dots" id="dots"></div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -385,6 +389,6 @@
   </div>
 </footer>
 
-<script src="js/projects.js?v=1.0.2"></script>
+<script src="js/projects.js?v=1.1.0"></script>
 </body>
 </html>

@@ -28,6 +28,9 @@
 <link rel="icon" href="images/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <title>Paolo Diomede | Technical Account Manager @ Certora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" />
 <style>
   :root{
     --li-blue:#0A66C2;
@@ -55,7 +58,7 @@
 
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+    -webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
   .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--ink);
     letter-spacing:2.5px;text-transform:uppercase;font-size:13.5px}
@@ -277,6 +280,7 @@
   html[data-theme="dark"] .socials a::after{background:#283340;color:#E8EAED}
   html[data-theme="dark"] .socials a::before{border-top-color:#283340}
   html[data-theme="dark"] .slide .role-title{color:var(--li-blue-light)}
+  html[data-theme="dark"] .slide .period-line a{color:var(--li-blue-light)}
   html[data-theme="dark"] .nav-btn{color:var(--li-blue-light)}
   html[data-theme="dark"] footer a{color:var(--li-blue-light)}
   html[data-theme="dark"] .section-label{color:var(--li-blue-light)}
@@ -285,8 +289,65 @@
   html[data-theme="dark"] .dot.active{background:var(--li-blue-light)}
   html[data-theme="dark"] .nav-links a:hover{color:var(--li-blue-light)}
   html[data-theme="dark"] .socials a:hover{border-color:var(--li-blue-light);color:var(--li-blue-light)}
+
+  /* ---- landing splash (index-only; intentionally hardcoded light, never themed) ---- */
+  .splash{position:fixed;inset:0;z-index:1000;display:flex;overflow-y:auto;
+    background:#F4F2EE;color:#1B1F23;padding:24px;opacity:1;visibility:visible;
+    transition:opacity .6s ease,visibility .6s ease}
+  .splash.is-dismissed{opacity:0;visibility:hidden;pointer-events:none}
+  html.splash-skip .splash{display:none}
+  html.splash-open,html.splash-open body{overflow:hidden;height:100%}
+  .splash-inner{margin:auto;max-width:680px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+  .splash-head{display:flex;flex-direction:column;align-items:center}
+  .splash-name{font-family:"Oswald","Arial Narrow",sans-serif;font-weight:700;font-size:44px;letter-spacing:.5px;color:#1B1F23}
+  .splash-role{font-size:18px;line-height:1.5;color:#56687A;margin-top:8px}
+  .splash-night{font-size:14px;line-height:1.5;font-style:italic;color:#56687A;margin-top:2px}
+  .splash-prev-group{list-style:none;display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:18px;text-align:left}
+  .splash-prev{font-size:16px;line-height:1.6;color:#56687A;font-style:italic}
+  .splash-prev::before{content:"\2726";font-style:normal;color:#56687A;font-size:.8em;margin-right:.6em}
+  .splash-head a{color:#0A66C2;font-weight:600}
+  .splash-head a:hover{text-decoration:underline}
+  .splash-head .nowrap{white-space:nowrap}
+  .splash-socials{display:flex;gap:14px;margin-top:4px}
+  .splash-socials a{position:relative;width:38px;height:38px;border-radius:50%;border:1px solid #E3E0DA;
+    display:grid;place-items:center;color:#56687A}
+  .splash-socials a:hover{border-color:#0A66C2;color:#0A66C2}
+  .splash-socials a::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;
+    transform:translateX(-50%) translateY(4px);background:#1B1F23;color:#fff;font-size:12px;font-weight:600;
+    white-space:nowrap;padding:6px 10px;border-radius:7px;opacity:0;pointer-events:none;
+    transition:opacity .15s,transform .15s;z-index:20}
+  .splash-socials a::before{content:"";position:absolute;bottom:calc(100% + 4px);left:50%;
+    transform:translateX(-50%) translateY(4px);border:6px solid transparent;border-top-color:#1B1F23;
+    opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:20}
+  .splash-socials a:hover::after,.splash-socials a:hover::before{opacity:1;transform:translateX(-50%) translateY(0)}
+  .splash-prompt{font-size:14px;font-weight:600;font-style:italic;color:#56687A;margin-top:8px}
+  .sphere{position:relative;width:120px;height:120px;padding:0;border:none;background:transparent;
+    cursor:pointer;border-radius:50%;outline-offset:4px}
+  .sphere .orb,.sphere .graph{position:absolute;inset:0;display:grid;place-items:center;
+    transition:opacity .45s ease,transform .45s ease}
+  .sphere .orb{border-radius:50%;overflow:hidden;opacity:1;transform:scale(1);
+    background:radial-gradient(circle at 32% 28%,#6FA8FF 0%,#0A66C2 45%,#004182 100%);
+    box-shadow:0 10px 28px rgba(10,102,194,.35),inset 0 0 22px rgba(255,255,255,.18)}
+  .sphere .orb::before{content:"";position:absolute;inset:-25%;mix-blend-mode:screen;
+    background:conic-gradient(from 0deg,rgba(255,255,255,0) 0deg,rgba(255,255,255,.55) 60deg,rgba(255,255,255,0) 130deg,rgba(255,255,255,0) 360deg);
+    animation:orbSpin 6s linear infinite}
+  .sphere .orb::after{content:"";position:absolute;inset:14%;border-radius:50%;
+    border:1px solid rgba(255,255,255,.30);animation:orbSpin 6s linear infinite reverse}
+  @keyframes orbSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .sphere .graph{opacity:0;transform:scale(.7)}
+  .sphere .graph svg{width:100%;height:100%;display:block;overflow:visible}
+  .sphere .graph line{stroke:#0A66C2;stroke-width:2;opacity:.55}
+  .sphere .graph rect{fill:#fff;stroke:#0A66C2;stroke-width:2}
+  .sphere:hover .orb,.sphere:focus-visible .orb{opacity:0;transform:scale(1.15)}
+  .sphere:hover .graph,.sphere:focus-visible .graph{opacity:1;transform:scale(1)}
+  @media(max-width:640px){.splash-name{font-size:34px}.splash-role{font-size:16px}.splash-night{font-size:13px}.splash-prev{font-size:14px}.splash-socials a::after,.splash-socials a::before{display:none}}
+  @media (prefers-reduced-motion:reduce){
+    .sphere .orb::before,.sphere .orb::after{animation:none}
+    .sphere .orb,.sphere .graph{transition:opacity .2s ease}
+  }
 </style>
-<script src="js/theme.js?v=1.0.2"></script>
+<script src="js/theme.js?v=1.1.0"></script>
+<script src="js/landing.js?v=1.1.0"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -294,6 +355,7 @@
   "name": "Paolo Diomede",
   "url": "https://pdiomede.com/",
   "image": "https://pdiomede.com/images/me2024.jpg",
+  "email": "mailto:me@pdiomede.com",
   "jobTitle": "Technical Account Manager",
   "worksFor": { "@type": "Organization", "name": "Certora", "url": "https://www.certora.com" },
   "alumniOf": [
@@ -327,6 +389,7 @@
   </div>
 </header>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
@@ -368,6 +431,7 @@
           <a href="https://x.com/pdiomede" target="_blank" rel="noopener" data-tip="Follow me on X" aria-label="X (Twitter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.6l8-9.2L1 2h7l4.8 6.4L18.9 2m-1.2 18h1.9L7.1 4H5.1l12.6 16z"/></svg></a>
           <a href="https://t.me/pdiomede" target="_blank" rel="noopener" data-tip="Message me on Telegram" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.5L18.6 20.2c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.43 2.34c-.27.27-.5.5-1 .5l.36-5.13L17 6.16c.4-.36-.09-.56-.62-.2L6.04 12.6l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6L20.5 2.93c.9-.34 1.69.2 1.44 1.57z"/></svg></a>
           <a href="https://github.com/pdiomede" target="_blank" rel="noopener" data-tip="See my code on GitHub" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.57.67.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg></a>
+          <a href="mailto:me@pdiomede.com" data-tip="Email me" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
         </div>
       </div>
     </div>
@@ -415,6 +479,7 @@
     <div class="dots" id="dots"></div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -423,6 +488,33 @@
   </div>
 </footer>
 
-<script src="js/index.js?v=1.0.2"></script>
+<!-- LANDING SPLASH (reveal-on-same-page). Real content stays rendered beneath for SEO; js/landing.js controls show/skip/dismiss. -->
+<div class="splash" id="splash" role="region" aria-label="Welcome">
+  <div class="splash-inner">
+    <div class="splash-head">
+      <h1 class="splash-name">Paolo Diomede</h1>
+      <p class="splash-role">Technical Account Manager @ <a href="https://www.certora.com" target="_blank" rel="noopener">Certora</a></p>
+      <p class="splash-night">By night: vibe-coding useful things with AI</p>
+      <ul class="splash-prev-group" role="list">
+        <li class="splash-prev">prev. Ecosystem Lead @ <a href="https://thegraph.com/" target="_blank" rel="noopener" class="nowrap">The Graph Foundation</a> | Governance Advisory Board @ <a href="https://livepeer.org" target="_blank" rel="noopener">Livepeer</a></li>
+      </ul>
+    </div>
+    <div class="splash-socials">
+      <a href="https://www.linkedin.com/in/pdiomede" target="_blank" rel="noopener" data-tip="Connect with me on LinkedIn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.34 17.34V9.93H5.87v7.41h2.47M7.1 8.86a1.43 1.43 0 1 0 0-2.86 1.43 1.43 0 0 0 0 2.86m11.24 8.48v-4.06c0-2.2-1.18-3.23-2.75-3.23a2.37 2.37 0 0 0-2.15 1.18v-1.01h-2.47v7.12h2.47v-3.94c0-1.04.2-2.04 1.48-2.04s1.27 1.18 1.27 2.11v3.87h2.42"/></svg></a>
+      <a href="https://x.com/pdiomede" target="_blank" rel="noopener" data-tip="Follow me on X" aria-label="X (Twitter)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.6l8-9.2L1 2h7l4.8 6.4L18.9 2m-1.2 18h1.9L7.1 4H5.1l12.6 16z"/></svg></a>
+      <a href="https://t.me/pdiomede" target="_blank" rel="noopener" data-tip="Message me on Telegram" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.5L18.6 20.2c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.43 2.34c-.27.27-.5.5-1 .5l.36-5.13L17 6.16c.4-.36-.09-.56-.62-.2L6.04 12.6l-4.98-1.56c-1.08-.34-1.1-1.08.23-1.6L20.5 2.93c.9-.34 1.69.2 1.44 1.57z"/></svg></a>
+      <a href="https://github.com/pdiomede" target="_blank" rel="noopener" data-tip="See my code on GitHub" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.57.67.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg></a>
+      <a href="mailto:me@pdiomede.com" data-tip="Email me" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+    <p class="splash-prompt" id="splash-prompt">Want to know more?</p>
+    <button type="button" class="sphere" id="splash-enter" aria-label="Enter the site" aria-describedby="splash-prompt">
+      <span class="orb" aria-hidden="true"></span>
+      <span class="graph" aria-hidden="true"><svg viewBox="0 0 120 120" aria-hidden="true"><line x1="60" y1="60" x2="22" y2="24"/><line x1="60" y1="60" x2="98" y2="26"/><line x1="60" y1="60" x2="20" y2="96"/><line x1="60" y1="60" x2="100" y2="94"/><rect x="50" y="50" width="20" height="20" rx="3"/><rect x="12" y="14" width="18" height="18" rx="3"/><rect x="89" y="16" width="18" height="18" rx="3"/><rect x="10" y="86" width="18" height="18" rx="3"/><rect x="90" y="84" width="18" height="18" rx="3"/></svg></span>
+    </button>
+  </div>
+</div>
+<noscript><style>.splash{display:none}</style></noscript>
+
+<script src="js/index.js?v=1.1.0"></script>
 </body>
 </html>

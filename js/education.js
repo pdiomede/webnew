@@ -84,7 +84,7 @@
     {
       era:"1994", eraSub:"– 2000", initials:"UL", color:"#4A5568", logo:"images/univaq.jpg",
       school:"Università degli Studi dell'Aquila", url:"https://www.univaq.it", location:"L'Aquila, Italy",
-      title:"Bachelor's Degree", field:"Computer Science",
+      title:"MSc in Computer Science", field:"Computer Science",
       period:"1994 – 2000",
       blurb:"Master Degree in Computer Science achieved on April 2000 at the University of L'Aquila. Thesis on Knowledge Management and the Web using XML, completed at Telecom Italia Learning Services."
     }
