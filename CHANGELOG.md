@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file. The format is b
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-06-13
+
+### Fixed
+- Dark mode readability: a number of blue accents used the dark `--li-blue` (`#0A66C2`), which was hard to read on the dark background. They now use the lighter `--li-blue-light` (`#378FE9`) in dark mode only: card taglines / role titles (`.role-title`), section labels (e.g. "The journey so far"), the large year numbers (`.era` and `.edu-year`), the carousel arrows (`.nav-btn`), the ghost button's text and border (`.btn-ghost`), and the footer link.
+- Dark mode: the active carousel pagination dot was effectively invisible (rendered grey) because the `html[data-theme="dark"] .dot` override out-specified `.dot.active`; the active dot is now the light-blue pill again.
+
 ## [1.0.2] - 2026-06-12
 
 ### Added
