@@ -59,6 +59,8 @@ Control logic is in **`js/landing.js`** (a shared single-file script like `theme
 
 The splash is **intentionally hardcoded light** (literal hex, no `--*` variables anywhere under `.splash`) so dark mode can never touch it, and it freezes the sphere animation under `prefers-reduced-motion`. As noted in Dark mode, the `.splash*`/`.sphere` rules are an **index-only** addition to the inline `<style>` (mirroring the `#projects`-on-`projects.html` precedent): they live only on `index.html` and are exempt from the chrome "change one, change all" rule.
 
+**Frame bars:** two full-height vertical bars flank the splash via `.splash::before` (left) / `.splash::after` (right) — `position:fixed`, `pointer-events:none`, filled with the same gradient as the sphere orb (`#6FA8FF → #0A66C2 → #004182`), ~100px wide on desktop and 30px on mobile. They are part of `.splash` (and hardcoded light like the rest of it), so they fade out with the overlay on dismiss and never appear once you enter or on the other pages. **Coupling to keep intact:** `.splash` carries deliberately wide horizontal padding (`24px 120px`, narrowing to `24px 38px` on mobile) sized to exceed the bar width, so the centered `.splash-inner` always clears the fixed bars at every viewport. Do not "normalize" that back to a small symmetric padding, or the bars will overlap the content on mid-width screens (the centered content is only naturally clear of fixed edge bars once the viewport exceeds `max-width + 2·barWidth`).
+
 **External font (the one exception to self-hosting):** the splash name (`.splash-name`) uses the **Oswald** webfont, loaded via a `<link>` to Google Fonts in `index.html`'s `<head>` (index-only), with `display=swap` and a condensed system fallback (`"Arial Narrow"`) so it degrades gracefully. This is the site's only external runtime dependency — everything else (logos, scripts, styles) is self-hosted. If the production CSP restricts `font-src` / `style-src`, the browser blocks the load and the name falls back to the system stack; self-hosting the `.woff2` is the fully CSP-safe alternative.
 
 ## Carousel architecture
@@ -81,12 +83,12 @@ Each entry resolves its logo through `logoChip()` so a broken image never leaves
 
 ### Styling
 
-Theme colors are CSS custom properties on `:root` (the `--li-*` LinkedIn-blue palette, `--bg`, `--card`, `--ink`, etc.); change colors there, not at call sites. Layout is responsive via `@media` breakpoints (notably 680px, where carousel slides collapse to a single column).
+Theme colors are CSS custom properties on `:root` (the `--li-*` LinkedIn-blue palette, `--bg`, `--card`, `--ink`, etc.); change colors there, not at call sites. Layout is responsive via `@media` breakpoints (notably 680px, where carousel slides collapse to a single column). Every color used across the site (core tokens, dark-mode overrides, hero animation, current-role card, splash, sphere, frame bars, and the logo-monogram fallbacks) is catalogued in `COLOR_PALETTE.md` — keep it in sync when you add or change a color.
 
 ## Conventions
 
 - **No em dashes** in page content (the long `U+2014` dash). Date ranges use the en dash (`U+2013`), which is the correct range dash and is intentional. Page titles use a pipe separator (`Paolo Diomede | ...`).
-- **Cache-busting JS version**: each page loads its script with a version query (`<script src="js/projects.js?v=1.1.0">`). The site sits behind Cloudflare, which caches `js/*.js` for hours, so a deploy that changes a JS file without changing the query string will keep serving the stale cached copy (symptom: a carousel renders no cards in production while working locally). Bump the `?v=` on the affected page(s) whenever you change a `js/*.js` file, keeping it aligned with the version in `README.md` / `CHANGELOG.md`.
+- **Cache-busting JS version**: each page loads its script with a version query (`<script src="js/projects.js?v=1.1.1">`). The site sits behind Cloudflare, which caches `js/*.js` for hours, so a deploy that changes a JS file without changing the query string will keep serving the stale cached copy (symptom: a carousel renders no cards in production while working locally). Bump the `?v=` on the affected page(s) whenever you change a `js/*.js` file, keeping it aligned with the version in `README.md` / `CHANGELOG.md`.
 - **Versioning / releases**: the project tracks a single semantic version, recorded in `CHANGELOG.md` (Keep a Changelog format) and echoed in the README "Version" line. On a meaningful change, add a CHANGELOG entry, bump the README version, and (if a `js/*.js` file changed) bump the matching `?v=` query. Deploy is a plain `git pull` on the VPS; there is no CI.
 
 ## Content / fact-checking notes
