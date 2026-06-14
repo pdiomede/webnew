@@ -4,6 +4,10 @@ Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog
 
 ## [1.1.1] - 2026-06-14
 - **Changed:** the splash role label "Technical Account Manager @" now uses a darker navy (`#003049`) for more presence; the "Certora" link keeps its blue.
+- **Added:** two vertical gradient bars framing the landing splash along its left and right edges (orb-matched `#6FA8FF → #0A66C2 → #004182`, ~100px wide on desktop / 30px on mobile, hardcoded light so dark mode never touches them, and present only on the splash). Pure CSS via `.splash::before`/`::after`; they fade out with the overlay on enter.
+- **Added:** `COLOR_PALETTE.md` cataloguing every color used across the site (core tokens, dark mode, hero animation, current-role card, splash, sphere, and logo-monogram fallbacks); linked from the README.
+- **Added:** MIT `LICENSE.md`.
+- **Docs:** aligned the `js/*.js` `?v=` cache-busters to `1.1.1` across all three pages.
 
 ## [1.1.0] - 2026-06-13
 - **Added:** landing splash on the home page — a bare intro (name set in the Oswald webfont, a current-role line, a smaller italic "by night" line, a star-marked italic previous-roles line, social + email icons, and a rotating sphere that opens into a connected-node graph) that fades on click to reveal the full site. A `position:fixed` overlay over the unchanged page (content stays in the DOM, so SEO and URLs are intact) driven by `js/landing.js` (CSP-safe, no flash); light-locked and reduced-motion aware. The nav brand returns to it; deep links skip it.

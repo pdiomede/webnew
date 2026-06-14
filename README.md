@@ -10,7 +10,7 @@ Personal portfolio and resume site, live at [pdiomede.com](https://pdiomede.com)
 
 ## Features
 
-- Landing splash on the home page: a bare intro (name, subtitle, socials + email, a rotating sphere that opens into a connected-node graph on hover) that fades away on click to reveal the full site; the nav brand returns to it, deep links skip it, CSP-safe, no flash
+- Landing splash on the home page: a bare intro (name, subtitle, socials + email, a rotating sphere that opens into a connected-node graph on hover), framed by gradient bars down the left and right edges, that fades away on click to reveal the full site; the nav brand returns to it, deep links skip it, CSP-safe, no flash
 - Light/dark theme toggle (top-right): persists the choice, follows the device setting on first visit, no flash on load
 - Hover-driven hero animation: Hokusai-style waves, flying gulls, and a sunrise-to-sunset sky cycle (pure CSS/SVG, respects reduced motion)
 - Data-driven carousels with arrows, dots, swipe, and global keyboard navigation
@@ -32,8 +32,8 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.1.1**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md).
+Current: **1.1.1**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md); color tokens in [COLOR_PALETTE.md](COLOR_PALETTE.md).
 
 ## License
 
-Personal project. Content and images are owned by Paolo Diomede.
+Code is released under the MIT License (see [LICENSE.md](LICENSE.md)). Site content, copy, and images are owned by Paolo Diomede.

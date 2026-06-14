@@ -292,11 +292,16 @@
 
   /* ---- landing splash (index-only; intentionally hardcoded light, never themed) ---- */
   .splash{position:fixed;inset:0;z-index:1000;display:flex;overflow-y:auto;
-    background:#F4F2EE;color:#1B1F23;padding:24px;opacity:1;visibility:visible;
+    background:#F4F2EE;color:#1B1F23;padding:24px 120px;opacity:1;visibility:visible;
     transition:opacity .6s ease,visibility .6s ease}
   .splash.is-dismissed{opacity:0;visibility:hidden;pointer-events:none}
   html.splash-skip .splash{display:none}
   html.splash-open,html.splash-open body{overflow:hidden;height:100%}
+  /* left/right frame bars, orb-matched gradient (hardcoded light, never themed) */
+  .splash::before,.splash::after{content:"";position:fixed;top:0;bottom:0;width:100px;
+    pointer-events:none;background:linear-gradient(180deg,#6FA8FF 0%,#0A66C2 45%,#004182 100%)}
+  .splash::before{left:0}
+  .splash::after{right:0}
   .splash-inner{margin:auto;max-width:680px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
   .splash-head{display:flex;flex-direction:column;align-items:center}
   .splash-name{font-family:"Oswald","Arial Narrow",sans-serif;font-weight:700;font-size:44px;letter-spacing:.5px;color:#1B1F23}
@@ -340,14 +345,14 @@
   .sphere .graph rect{fill:#fff;stroke:#0A66C2;stroke-width:2}
   .sphere:hover .orb,.sphere:focus-visible .orb{opacity:0;transform:scale(1.15)}
   .sphere:hover .graph,.sphere:focus-visible .graph{opacity:1;transform:scale(1)}
-  @media(max-width:640px){.splash-name{font-size:34px}.splash-role{font-size:16px}.splash-night{font-size:13px}.splash-prev{font-size:14px}.splash-socials a::after,.splash-socials a::before{display:none}}
+  @media(max-width:640px){.splash-name{font-size:34px}.splash-role{font-size:16px}.splash-night{font-size:13px}.splash-prev{font-size:14px}.splash-socials a::after,.splash-socials a::before{display:none}.splash{padding:24px 38px}.splash::before,.splash::after{width:30px}}
   @media (prefers-reduced-motion:reduce){
     .sphere .orb::before,.sphere .orb::after{animation:none}
     .sphere .orb,.sphere .graph{transition:opacity .2s ease}
   }
 </style>
-<script src="js/theme.js?v=1.1.0"></script>
-<script src="js/landing.js?v=1.1.0"></script>
+<script src="js/theme.js?v=1.1.1"></script>
+<script src="js/landing.js?v=1.1.1"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -515,6 +520,6 @@
 </div>
 <noscript><style>.splash{display:none}</style></noscript>
 
-<script src="js/index.js?v=1.1.0"></script>
+<script src="js/index.js?v=1.1.1"></script>
 </body>
 </html>
