@@ -102,9 +102,11 @@ In dark mode, blue **foreground** accents re-point from `--li-blue` to `--li-blu
 |---|---|---|
 | Splash background | `#F4F2EE` | Overlay background |
 | Splash text | `#1B1F23` | Name + body |
-| Role label | `#003049` | "Technical Account Manager @" |
-| "By night" / prev roles | `#56687A` | Subtitle lines |
-| Splash links | `#0A66C2` | Inline links |
+| Role label | `#14213D` | "Technical Account Manager @" (`.splash-role`) |
+| "By night" line | `#495057` | `.splash-night` subtitle |
+| Prev-roles line + ✦ | `#343A40` | `.splash-prev` text & star (links excluded) |
+| "Want to know more?" | `#343A40` | `.splash-prompt` caption |
+| Splash links | `#0A66C2` | Inline links (Certora, The Graph, Livepeer) |
 | Splash borders | `#E3E0DA` | Social-icon borders |
 | **Frame bars** | `linear-gradient(180deg, #6FA8FF 0%, #0A66C2 45%, #004182 100%)` | Left/right vertical bars |
 | Sphere orb | `radial-gradient(#6FA8FF 0%, #0A66C2 45%, #004182 100%)` | Glossy globe |

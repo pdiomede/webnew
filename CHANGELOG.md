@@ -3,7 +3,7 @@
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
 ## [1.1.1] - 2026-06-14
-- **Changed:** the splash role label "Technical Account Manager @" now uses a darker navy (`#003049`) for more presence; the "Certora" link keeps its blue.
+- **Changed:** refined the splash text colors — the role label "Technical Account Manager @" to `#14213D`, the "by night" line to `#495057`, and the previous-roles line (with its ✦) plus the "Want to know more?" caption to `#343A40`; the inline links (Certora / The Graph / Livepeer) keep their blue.
 - **Added:** two vertical gradient bars framing the landing splash along its left and right edges (orb-matched `#6FA8FF → #0A66C2 → #004182`, ~100px wide on desktop / 30px on mobile, hardcoded light so dark mode never touches them, and present only on the splash). Pure CSS via `.splash::before`/`::after`; they fade out with the overlay on enter.
 - **Added:** `COLOR_PALETTE.md` cataloguing every color used across the site (core tokens, dark mode, hero animation, current-role card, splash, sphere, and logo-monogram fallbacks); linked from the README.
 - **Added:** MIT `LICENSE.md`.
