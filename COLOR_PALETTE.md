@@ -85,6 +85,7 @@ In dark mode, blue **foreground** accents re-point from `--li-blue` to `--li-blu
 | Sky — sunset | `#41295A`, `#B85C38`, `#F2994A` |
 | Sky — night | `#020F1F`, `#0A2342`, `#16324F` |
 | Waves (dark fills) | back `#0B3D66`, mid `#04365E`, front `#062A47`; foam `#fff` |
+| Dolphins | fill `#062A47` (front-wave navy), opacity .95 / .8 |
 | Birds | stroke `#fff` |
 | Avatar gradient | `#0A66C2` → `#378FE9`, border `#fff` |
 | Avatar fireworks | `#F5B700`, `#E0552B`, `#378FE9`, `#fff`, `#057642`, `#0A66C2` |

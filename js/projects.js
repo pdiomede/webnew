@@ -3,9 +3,8 @@
     if(e.logo){
       chip = `<div class="logo-chip white${e.logoFull?' full':''}"><img src="${e.logo}" alt="${e.name||''}" data-init="${e.initials}" data-color="${e.color}"></div>`;
     } else if(e.domain){
-      const cb='https://logo.clearbit.com/'+e.domain;
       const fav='https://www.google.com/s2/favicons?domain='+e.domain+'&sz=128';
-      chip = `<div class="logo-chip white"><img src="${cb}" alt="${e.name||''}" data-fav="${fav}" data-init="${e.initials}" data-color="${e.color}"></div>`;
+      chip = `<div class="logo-chip white"><img src="${fav}" alt="${e.name||''}" data-init="${e.initials}" data-color="${e.color}"></div>`;
     } else {
       chip = `<div class="logo-chip" style="background:${e.color}">${e.initials}</div>`;
     }
@@ -87,6 +86,7 @@
       if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey) return;
       const a=document.activeElement;
       if(a&&(/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)||a.isContentEditable)) return;
+      if(trackEl.closest('[inert]')) return;
       e.preventDefault();
       const i=e.key==='ArrowRight'?currentIndex()+1:Math.max(0,currentIndex()-1);
       const r=trackEl.getBoundingClientRect();

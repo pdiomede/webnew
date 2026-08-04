@@ -2,6 +2,17 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-08-04
+- **Added:** breaching dolphins in the hero banner on all three pages — two flat navy silhouettes (pure CSS/SVG, no JS) leap out of the water between the mid and front wave layers, arc nose-up to nose-down, and dive back behind the front wave from time to time while the banner is hovered (staggered 13.5s/17s cycles that never sync with the birds or sky). The hover play-state rule and its reduced-motion re-pause now list seven selectors.
+- **Fixed:** the splash previous-roles line stays on one line — fluid font size (14px on wide screens, shrinking to 11px near 900px viewports, wrapping normally below that) after the line grew with the Certora entry; the splash content column widened from 680px to 900px to give it room.
+- **Fixed:** arrow keys no longer scroll the Journey carousel (or the page) behind the open landing splash — the carousels' document-level keydown handler now bails while the carousel sits in an `inert` subtree.
+- **Fixed:** removed the dead Clearbit hop from the logo fallback chain — `logo.clearbit.com` was discontinued and every `domain:` logo request failed before falling back; Google favicons are now fetched directly (one less doomed request per logo, faster chips, same rendering).
+- **Fixed:** refreshed the stale `sitemap.xml` lastmod dates (2026-06-13 → 2026-08-04) after the role-change and animation updates.
+- **Docs:** bumped `js/index.js` / `js/education.js` / `js/projects.js` cache-busters to `1.4.0`; updated README, CLAUDE.md, and COLOR_PALETTE.md.
+
+## [1.3.0] - 2026-08-04
+- **Added:** avatar pointer-tilt on all three pages — the hero profile badge (photo + white ring) tilts in 3D toward the mouse pointer, like the face is watching it. New shared `js/avatar.js?v=1.3.0` (end-of-body on every page; rAF-throttled document `mousemove`, 12° max tilt eased near the face, resets when the pointer leaves the page). Skipped entirely on touch / coarse-pointer devices and under `prefers-reduced-motion` (gated in JS), and idle while the landing splash is open. One shared CSS line (`.avatar{transition:transform .16s ease-out;will-change:transform}`) smooths the motion and the return to neutral.
+
 ## [1.2.1] - 2026-08-04
 - **Changed:** completed the Hypernative Current Role card — replaced the placeholder blurb with a concise, two-sentence description of the role (EMEA client onboarding and success, platform adoption, KPIs and QBRs, expansion with Sales, renewals, and voice-of-customer), and updated the focus pills to Customer Success, Onboarding & Adoption, Retention & Renewals, Stakeholder Management, and Security Strategy.
 

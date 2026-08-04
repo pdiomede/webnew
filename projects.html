@@ -90,6 +90,15 @@
   .hero-banner .wave-back svg{animation-duration:7.3s}
   .hero-banner .wave-mid svg{animation-duration:5.1s;animation-delay:-2.6s}
   .hero-banner .wave-front svg{animation-duration:3.9s;animation-delay:-1.3s}
+  .hero-banner .dolphins{position:absolute;inset:0;pointer-events:none}
+  .hero-banner .dolphin{position:absolute;top:100%;will-change:transform;
+    animation:dolphinGlide 13.5s linear infinite;animation-play-state:paused}
+  .hero-banner .dolphin svg{display:block;width:100%;height:auto;transform-origin:50% 50%;
+    animation:dolphinArc 13.5s linear infinite;animation-play-state:paused;will-change:transform}
+  .hero-banner .dolphin-1{left:30%;width:38px;opacity:.95;animation-delay:2.4s}
+  .hero-banner .dolphin-1 svg{animation-delay:2.4s}
+  .hero-banner .dolphin-2{left:64%;width:27px;opacity:.8;animation-duration:17s;animation-delay:7s}
+  .hero-banner .dolphin-2 svg{animation-duration:17s;animation-delay:7s}
   .hero-banner .birds{position:absolute;inset:0;pointer-events:none}
   .hero-banner .bird{position:absolute;left:-30px;opacity:.9;
     animation:birdFly 11s linear infinite;animation-play-state:paused;will-change:transform}
@@ -98,15 +107,19 @@
   .hero-banner .bird-1{top:18%;width:26px;animation-delay:1.5s}
   .hero-banner .bird-2{top:32%;width:20px;animation-duration:13s;animation-delay:3.2s}
   .hero-banner .bird-3{top:10%;width:16px;animation-duration:15s;animation-delay:5s}
-  .hero-banner:hover .wave,.hero-banner:hover .wave svg,.hero-banner:hover .bird,.hero-banner:hover .bird svg,.hero-banner:hover .sky{animation-play-state:running}
+  .hero-banner:hover .wave,.hero-banner:hover .wave svg,.hero-banner:hover .bird,.hero-banner:hover .bird svg,.hero-banner:hover .dolphin,.hero-banner:hover .dolphin svg,.hero-banner:hover .sky{animation-play-state:running}
   @keyframes waveScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   @keyframes waveHeave{from{transform:translate3d(0,3px,0) scaleY(.97)}to{transform:translate3d(0,-4px,0) scaleY(1.08)}}
+  @keyframes dolphinGlide{0%,4%{transform:translate3d(0,0,0)}22%,100%{transform:translate3d(88px,0,0)}}
+  @keyframes dolphinArc{0%,4%{transform:translate3d(0,0,0) rotate(-38deg);animation-timing-function:ease-out}
+    13%{transform:translate3d(0,-70px,0) rotate(-2deg);animation-timing-function:ease-in}
+    22%,100%{transform:translate3d(0,6px,0) rotate(38deg)}}
   @keyframes birdFly{from{transform:translate3d(0,0,0)}to{transform:translate3d(1300px,-8px,0)}}
   @keyframes birdFlap{from{transform:scaleY(1)}to{transform:scaleY(.55)}}
   @keyframes skySunrise{0%{opacity:0}4%{opacity:.85}16%{opacity:0}100%{opacity:0}}
   @keyframes skySunset{0%{opacity:0}45%{opacity:0}58%{opacity:.9}74%{opacity:.9}88%{opacity:0}100%{opacity:0}}
   @keyframes skyNight{0%{opacity:0}80%{opacity:0}88%{opacity:.55}96%{opacity:0}100%{opacity:0}}
-  @media (prefers-reduced-motion:reduce){.hero-banner:hover .wave,.hero-banner:hover .wave svg,.hero-banner:hover .bird,.hero-banner:hover .bird svg,.hero-banner:hover .sky{animation-play-state:paused}}
+  @media (prefers-reduced-motion:reduce){.hero-banner:hover .wave,.hero-banner:hover .wave svg,.hero-banner:hover .bird,.hero-banner:hover .bird svg,.hero-banner:hover .dolphin,.hero-banner:hover .dolphin svg,.hero-banner:hover .sky{animation-play-state:paused}}
   .hero-body{padding:0 32px 30px;position:relative;display:flow-root}
   .avatar{width:128px;height:128px;border-radius:50%;border:5px solid #fff;margin-top:-72px;
     display:grid;place-items:center;font-size:44px;font-weight:800;color:#fff;overflow:hidden;
@@ -126,6 +139,7 @@
     100%{opacity:0;box-shadow:110px 0 0 #F5B700,90px -52px 0 #E0552B,49px -86px 0 #378FE9,0 -117px 0 #fff,-44px -77px 0 #057642,-101px -58px 0 #0A66C2,-107px 0 0 #F5B700,-79px 46px 0 #E0552B,-56px 96px 0 #378FE9,0 101px 0 #fff,60px 104px 0 #057642,85px 49px 0 #0A66C2}
   }
   @media (prefers-reduced-motion:reduce){.avatar-fx:hover::before,.avatar-fx:hover::after{animation:none}}
+  .avatar{transition:transform .16s ease-out;will-change:transform}
   .hero h1{font-size:30px;margin-top:14px;letter-spacing:-.3px}
   .hero .headline{font-size:16px;margin-top:4px;font-weight:500}
   .hero .meta{font-size:14px;color:var(--ink-soft);margin-top:8px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
@@ -327,6 +341,10 @@
           <path d="M0,60 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 L1200,120 L0,120 Z" fill="#fff" opacity=".55"/>
           <path d="M0,60 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 q75,-35 150,0 q75,35 150,0 L1200,120 L0,120 Z" transform="translate(0,7)" fill="#04365E"/>
         </svg></div>
+        <div class="dolphins" aria-hidden="true">
+          <div class="dolphin dolphin-1"><svg viewBox="0 0 48 24"><path d="M46,12 C42,7.5 36,5 29.5,5.2 L27.6,5.4 C26.8,3.1 25,1.2 22.2,.6 C23.4,2.6 23.7,4.7 23.1,6.3 C17.6,7.3 11.6,9.5 7.6,12 C6.2,9.7 4.4,7.9 1.8,7 C3.4,9.2 4,11.2 3.8,13.1 C3.9,15.1 3.2,17.2 1.6,19.3 C4.2,18.4 6,16.5 7.2,14.3 C12,16.9 18,18.6 24,18.4 C32.5,18.1 40.5,15.6 46,12 Z" fill="#062A47"/></svg></div>
+          <div class="dolphin dolphin-2"><svg viewBox="0 0 48 24"><path d="M46,12 C42,7.5 36,5 29.5,5.2 L27.6,5.4 C26.8,3.1 25,1.2 22.2,.6 C23.4,2.6 23.7,4.7 23.1,6.3 C17.6,7.3 11.6,9.5 7.6,12 C6.2,9.7 4.4,7.9 1.8,7 C3.4,9.2 4,11.2 3.8,13.1 C3.9,15.1 3.2,17.2 1.6,19.3 C4.2,18.4 6,16.5 7.2,14.3 C12,16.9 18,18.6 24,18.4 C32.5,18.1 40.5,15.6 46,12 Z" fill="#062A47"/></svg></div>
+        </div>
         <div class="wave wave-front"><svg viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0,85 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 L1200,120 L0,120 Z" fill="#fff" opacity=".9"/>
           <path d="M0,85 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 q30,-50 65,-35 q20,7 45,20 q20,8 40,15 L1200,120 L0,120 Z" transform="translate(0,8)" fill="#062A47"/>
@@ -389,6 +407,7 @@
   </div>
 </footer>
 
-<script src="js/projects.js?v=1.1.1"></script>
+<script src="js/projects.js?v=1.4.0"></script>
+<script src="js/avatar.js?v=1.3.0"></script>
 </body>
 </html>
