@@ -2,6 +2,9 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2026-08-04
+- **Changed:** completed the Hypernative Current Role card — replaced the placeholder blurb with a concise, two-sentence description of the role (EMEA client onboarding and success, platform adoption, KPIs and QBRs, expansion with Sales, renewals, and voice-of-customer), and updated the focus pills to Customer Success, Onboarding & Adoption, Retention & Renewals, Stakeholder Management, and Security Strategy.
+
 ## [1.2.0] - 2026-08-04
 - **Changed:** current role updated to Customer Success Manager @ Hypernative (August 2026 – Present) across the splash, hero meta/`<title>`, Open Graph / Twitter tags, and the `Person` JSON-LD; the previous Technical Account Manager @ Certora role (January 2026 – July 2026) moved into the Journey carousel as its newest entry.
 - **Added:** stylized sun and moon SVG icons on the splash, before the current-role line (amber sun `#F5A623`) and the "by night" line (slate crescent moon `#5A6483`).
