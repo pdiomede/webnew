@@ -92,13 +92,13 @@
   .hero-banner .wave-front svg{animation-duration:3.9s;animation-delay:-1.3s}
   .hero-banner .dolphins{position:absolute;inset:0;pointer-events:none}
   .hero-banner .dolphin{position:absolute;top:100%;will-change:transform;
-    animation:dolphinGlide 13.5s linear infinite;animation-play-state:paused}
+    animation:dolphinGlide 2s linear infinite;animation-play-state:paused}
   .hero-banner .dolphin svg{display:block;width:100%;height:auto;transform-origin:50% 50%;
-    animation:dolphinArc 13.5s linear infinite;animation-play-state:paused;will-change:transform}
-  .hero-banner .dolphin-1{left:30%;width:38px;opacity:.95;animation-delay:.5s}
-  .hero-banner .dolphin-1 svg{animation-delay:.5s}
-  .hero-banner .dolphin-2{left:64%;width:27px;opacity:.8;animation-duration:17s;animation-delay:7s}
-  .hero-banner .dolphin-2 svg{animation-duration:17s;animation-delay:7s}
+    animation:dolphinArc 2s linear infinite;animation-play-state:paused;will-change:transform}
+  .hero-banner .dolphin-1{left:30%;width:38px;opacity:.95;animation-delay:.9s}
+  .hero-banner .dolphin-1 svg{animation-delay:.9s}
+  .hero-banner .dolphin-2{left:64%;width:27px;opacity:.8;animation-delay:1.9s}
+  .hero-banner .dolphin-2 svg{animation-delay:1.9s}
   .hero-banner .birds{position:absolute;inset:0;pointer-events:none}
   .hero-banner .bird{position:absolute;left:-30px;opacity:.9;
     animation:birdFly 11s linear infinite;animation-play-state:paused;will-change:transform}
@@ -110,10 +110,10 @@
   .hero-banner:hover .wave,.hero-banner:hover .wave svg,.hero-banner:hover .bird,.hero-banner:hover .bird svg,.hero-banner:hover .dolphin,.hero-banner:hover .dolphin svg,.hero-banner:hover .sky{animation-play-state:running}
   @keyframes waveScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   @keyframes waveHeave{from{transform:translate3d(0,3px,0) scaleY(.97)}to{transform:translate3d(0,-4px,0) scaleY(1.08)}}
-  @keyframes dolphinGlide{0%,4%{transform:translate3d(0,0,0)}22%,100%{transform:translate3d(88px,0,0)}}
+  @keyframes dolphinGlide{0%,4%{transform:translate3d(0,0,0)}54%,100%{transform:translate3d(88px,0,0)}}
   @keyframes dolphinArc{0%,4%{transform:translate3d(0,0,0) rotate(-38deg);animation-timing-function:ease-out}
-    13%{transform:translate3d(0,-70px,0) rotate(-2deg);animation-timing-function:ease-in}
-    22%,100%{transform:translate3d(0,6px,0) rotate(38deg)}}
+    29%{transform:translate3d(0,-70px,0) rotate(-2deg);animation-timing-function:ease-in}
+    54%,100%{transform:translate3d(0,6px,0) rotate(38deg)}}
   @keyframes birdFly{from{transform:translate3d(0,0,0)}to{transform:translate3d(1300px,-8px,0)}}
   @keyframes birdFlap{from{transform:scaleY(1)}to{transform:scaleY(.55)}}
   @keyframes skySunrise{0%{opacity:0}4%{opacity:.85}16%{opacity:0}100%{opacity:0}}
