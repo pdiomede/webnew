@@ -33,7 +33,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.4.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md); color tokens in [COLOR_PALETTE.md](COLOR_PALETTE.md).
+Current: **1.2.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md); color tokens in [COLOR_PALETTE.md](COLOR_PALETTE.md).
 
 ## License
 

@@ -1,5 +1,6 @@
 /* Avatar pointer-tilt: the hero profile photo (the whole .avatar badge, white
-   ring included) tilts in 3D toward the mouse pointer, as if watching it.
+   ring included) tilts in 3D toward the mouse pointer and shifts a few px
+   toward it (a magnetic pull, with a slight scale), as if watching it.
    Shared single-file script loaded at the END OF BODY on all three pages (no
    pre-paint work, unlike theme.js/landing.js, so it must not block first
    paint). CSP-safe: external same-origin file, writes an inline transform on
@@ -17,8 +18,9 @@
     var avatar = document.querySelector('.avatar-fx .avatar');
     if (!avatar) return;
 
-    var MAX_TILT = 12;   // deg: clamp so page corners don't over-rotate
-    var RAMP = 320;      // px: distance at which the tilt reaches full strength
+    var MAX_TILT = 20;   // deg: clamp so page corners don't over-rotate
+    var MAX_SHIFT = 10;  // px: translation toward the pointer at full strength
+    var RAMP = 220;      // px: distance at which the effect reaches full strength
     var mx = 0, my = 0, ticking = false;
     var root = document.documentElement;
 
@@ -32,7 +34,10 @@
       var ease = Math.min(dist / RAMP, 1);
       var ry = (dx / dist) * MAX_TILT * ease;  // pointer right -> turn right
       var rx = (-dy / dist) * MAX_TILT * ease; // pointer down  -> nod down
-      avatar.style.transform = 'perspective(400px) rotateX(' + rx.toFixed(2) +
+      var tx = (dx / dist) * MAX_SHIFT * ease; // pull toward the pointer
+      var ty = (dy / dist) * MAX_SHIFT * ease;
+      avatar.style.transform = 'perspective(300px) translate3d(' + tx.toFixed(2) + 'px,' +
+        ty.toFixed(2) + 'px,0) scale(' + (1 + .04 * ease).toFixed(3) + ') rotateX(' + rx.toFixed(2) +
         'deg) rotateY(' + ry.toFixed(2) + 'deg)';
     }
 
