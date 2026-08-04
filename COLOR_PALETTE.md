@@ -102,8 +102,10 @@ In dark mode, blue **foreground** accents re-point from `--li-blue` to `--li-blu
 |---|---|---|
 | Splash background | `#F4F2EE` | Overlay background |
 | Splash text | `#1B1F23` | Name + body |
-| Role label | `#14213D` | "Technical Account Manager @" (`.splash-role`) |
+| Role label | `#14213D` | "Customer Success Manager @" (`.splash-role`) |
+| Sun icon | `#F5A623` | Stylized sun before `.splash-role` |
 | "By night" line | `#495057` | `.splash-night` subtitle |
+| Moon icon | `#5A6483` | Crescent moon before `.splash-night` |
 | Prev-roles line + ✦ | `#343A40` | `.splash-prev` text & star (links excluded) |
 | "Want to know more?" | `#343A40` | `.splash-prompt` caption |
 | Splash links | `#0A66C2` | Inline links (Certora, The Graph, Livepeer) |
@@ -122,6 +124,7 @@ resolves.
 
 | Entry | Hex |
 |---|---|
+| Certora | `#E8543F` |
 | Livepeer | `#00A66C` |
 | The Graph | `#6F4CFF` |
 | Nemax Tech | `#1B9E8F` |

@@ -1,5 +1,11 @@
   const experiences = [
     {
+      era:"2026", eraSub:"", company:"Certora", url:"https://www.certora.com", initials:"Ce", color:"#E8543F",
+      logo:"images/certora.jpg",
+      role:"Technical Account Manager", period:"January 2026 – July 2026",
+      blurb:"Worked with major DeFi and Web3 protocols, helping them plan and execute the right security strategy before and after engagement. Guided clients through audits, formal verification, off-chain code reviews, and on-chain monitoring, making sure the work fit their technical goals, timelines, and stakeholder needs. Managed the full customer journey and coordinated closely with auditors and security experts from initial scoping through delivery."
+    },
+    {
       era:"2025", eraSub:"– 2026", company:"Livepeer", url:"https://livepeer.org", initials:"Lp", color:"#00A66C",
       logo:"images/Livepeer-Logo-Symbol_light_mode.svg",
       location:"Remote", role:"Governance Advisory Board", period:"June 2025 – May 2026",
@@ -173,10 +179,10 @@
       <div class="side">
         ${logoChip(e)}
         <div class="era">${e.era}<small>${e.eraSub||''}</small></div>
-        <div class="loc">
+        ${e.location?`<div class="loc">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="#56687A" style="margin-top:2px"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
           ${e.location}
-        </div>
+        </div>`:''}
       </div>
       <div class="main">
         ${e.group?`<span class="chip-tag">${e.group}</span>`:''}

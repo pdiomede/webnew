@@ -4,7 +4,7 @@ Personal portfolio and resume site, live at [pdiomede.com](https://pdiomede.com)
 
 ## Pages
 
-- `index.html`: hero, current role (Certora), and the career journey carousel
+- `index.html`: hero, current role (Hypernative), and the career journey carousel
 - `education.html`: education and certifications carousel
 - `projects.html`: projects carousel (Url Reporter, Magellan, HomeVault, Graph Tools Pro)
 
@@ -32,7 +32,7 @@ Static files. On the server: `git pull`. Live immediately.
 
 ## Version
 
-Current: **1.1.1**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md); color tokens in [COLOR_PALETTE.md](COLOR_PALETTE.md).
+Current: **1.2.0**. See [CHANGELOG.md](CHANGELOG.md). Architecture notes in [CLAUDE.md](CLAUDE.md); color tokens in [COLOR_PALETTE.md](COLOR_PALETTE.md).
 
 ## License
 

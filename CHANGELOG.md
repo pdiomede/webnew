@@ -2,6 +2,12 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-08-04
+- **Changed:** current role updated to Customer Success Manager @ Hypernative (August 2026 – Present) across the splash, hero meta/`<title>`, Open Graph / Twitter tags, and the `Person` JSON-LD; the previous Technical Account Manager @ Certora role (January 2026 – July 2026) moved into the Journey carousel as its newest entry.
+- **Added:** stylized sun and moon SVG icons on the splash, before the current-role line (amber sun `#F5A623`) and the "by night" line (slate crescent moon `#5A6483`).
+- **Changed:** the Journey carousel location slot is now optional — an experience entry with no `location` renders no map-pin row (matching the Projects carousel's conditional fields); the Certora entry uses this.
+- **Docs:** bumped `js/index.js` cache-buster to `1.2.0`; updated README, COLOR_PALETTE, and CLAUDE.md.
+
 ## [1.1.1] - 2026-06-14
 - **Changed:** refined the splash text colors — the role label "Technical Account Manager @" to `#14213D`, the "by night" line to `#495057`, and the previous-roles line (with its ✦) plus the "Want to know more?" caption to `#343A40`; the inline links (Certora / The Graph / Livepeer) keep their blue.
 - **Added:** two vertical gradient bars framing the landing splash along its left and right edges (orb-matched `#6FA8FF → #0A66C2 → #004182`, ~100px wide on desktop / 30px on mobile, hardcoded light so dark mode never touches them, and present only on the splash). Pure CSS via `.splash::before`/`::after`; they fade out with the overlay on enter.
