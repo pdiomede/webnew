@@ -45,8 +45,8 @@
       // --shadow differs per theme, so anchor to the active theme each frame.
       var dark = root.getAttribute('data-theme') === 'dark';
       avatar.style.boxShadow = (dark ? '0 0 0 1px rgba(255,255,255,.05), ' : '0 0 0 1px rgba(0,0,0,.06), ') +
-        (-tx).toFixed(2) + 'px ' + (6 - ty).toFixed(2) + 'px ' + (18 + 12 * ease).toFixed(2) +
-        'px rgba(0,0,0,' + (dark ? (.45 + .2 * ease).toFixed(3) : (.08 + .14 * ease).toFixed(3)) + ')';
+        (-tx * 1.8).toFixed(2) + 'px ' + (6 - ty * 1.8).toFixed(2) + 'px ' + (18 + 18 * ease).toFixed(2) +
+        'px rgba(0,0,0,' + (dark ? (.45 + .3 * ease).toFixed(3) : (.08 + .27 * ease).toFixed(3)) + ')';
     }
 
     document.addEventListener('mousemove', function (e) {
