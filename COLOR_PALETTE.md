@@ -9,7 +9,7 @@ at call sites.
 > (standalone clones), so these tokens are defined identically in all three. The splash
 > and sphere colors are **index-only** and intentionally hardcoded (never themed).
 
-## Core tokens — light (`:root`)
+## Core tokens - light (`:root`)
 
 | Token | Hex | Used for |
 |---|---|---|
@@ -23,7 +23,7 @@ at call sites.
 | `--line` | `#E3E0DA` | Borders & dividers |
 | `--green` | `#057642` | Success-green token |
 
-## Core tokens — dark (`html[data-theme="dark"]`)
+## Core tokens - dark (`html[data-theme="dark"]`)
 
 | Token | Hex | Used for |
 |---|---|---|
@@ -81,9 +81,9 @@ In dark mode, blue **foreground** accents re-point from `--li-blue` to `--li-blu
 | Element | Colors |
 |---|---|
 | Banner base gradient | `#004182` → `#0A66C2` (55%) → `#378FE9` |
-| Sky — sunrise | `#B24592`, `#F15F79`, `#FFC371` |
-| Sky — sunset | `#41295A`, `#B85C38`, `#F2994A` |
-| Sky — night | `#020F1F`, `#0A2342`, `#16324F` |
+| Sky - sunrise | `#B24592`, `#F15F79`, `#FFC371` |
+| Sky - sunset | `#41295A`, `#B85C38`, `#F2994A` |
+| Sky - night | `#020F1F`, `#0A2342`, `#16324F` |
 | Waves (dark fills) | back `#0B3D66`, mid `#04365E`, front `#062A47`; foam `#fff` |
 | Dolphins | fill `#062A47` (front-wave navy), opacity .95 / .8 |
 | Birds | stroke `#fff` |
@@ -97,7 +97,7 @@ In dark mode, blue **foreground** accents re-point from `--li-blue` to `--li-blu
 | Category label (light) | `#001d3d` | `#projects .loc` |
 | Category label (dark) | `#7FA8D4` | `#projects .loc` |
 
-## Landing splash & sphere (`index.html` only — hardcoded light, never themed)
+## Landing splash & sphere (`index.html` only - hardcoded light, never themed)
 
 | Color | Hex / value | Used for |
 |---|---|---|

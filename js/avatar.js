@@ -1,6 +1,7 @@
 /* Avatar pointer-tilt: the hero profile photo (the whole .avatar badge, white
    ring included) tilts in 3D toward the mouse pointer and shifts a few px
-   toward it (a magnetic pull, with a slight scale), as if watching it.
+   toward it (a magnetic pull, with a slight scale and a trailing drop shadow
+   that lags opposite the pull), as if watching it.
    Shared single-file script loaded at the END OF BODY on all three pages (no
    pre-paint work, unlike theme.js/landing.js, so it must not block first
    paint). CSP-safe: external same-origin file, writes an inline transform on
@@ -18,7 +19,7 @@
     var avatar = document.querySelector('.avatar-fx .avatar');
     if (!avatar) return;
 
-    var MAX_TILT = 20;   // deg: clamp so page corners don't over-rotate
+    var MAX_TILT = 15;   // deg: clamp so page corners don't over-rotate
     var MAX_SHIFT = 10;  // px: translation toward the pointer at full strength
     var RAMP = 220;      // px: distance at which the effect reaches full strength
     var mx = 0, my = 0, ticking = false;
@@ -39,6 +40,13 @@
       avatar.style.transform = 'perspective(300px) translate3d(' + tx.toFixed(2) + 'px,' +
         ty.toFixed(2) + 'px,0) scale(' + (1 + .04 * ease).toFixed(3) + ') rotateX(' + rx.toFixed(2) +
         'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      // Trailing shadow: equals the resting --shadow at ease 0 (no jump), then
+      // the soft layer drifts opposite the pull and deepens as the badge lifts.
+      // --shadow differs per theme, so anchor to the active theme each frame.
+      var dark = root.getAttribute('data-theme') === 'dark';
+      avatar.style.boxShadow = (dark ? '0 0 0 1px rgba(255,255,255,.05), ' : '0 0 0 1px rgba(0,0,0,.06), ') +
+        (-tx).toFixed(2) + 'px ' + (6 - ty).toFixed(2) + 'px ' + (18 + 12 * ease).toFixed(2) +
+        'px rgba(0,0,0,' + (dark ? (.45 + .2 * ease).toFixed(3) : (.08 + .14 * ease).toFixed(3)) + ')';
     }
 
     document.addEventListener('mousemove', function (e) {
@@ -50,6 +58,7 @@
     // transition in the shared CSS animates the reset).
     root.addEventListener('mouseleave', function () {
       avatar.style.transform = '';
+      avatar.style.boxShadow = '';
     });
   });
 })();
