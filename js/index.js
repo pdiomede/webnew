@@ -2,7 +2,7 @@
     {
       era:"2026", eraSub:"", company:"Certora", url:"https://www.certora.com", initials:"Ce", color:"#E8543F",
       logo:"images/certora.jpg",
-      role:"Technical Account Manager", period:"January 2026 – July 2026",
+      role:"Technical Account Manager", period:"January 2026 – August 2026",
       blurb:"Worked with major DeFi and Web3 protocols, helping them plan and execute the right security strategy before and after engagement. Guided clients through audits, formal verification, off-chain code reviews, and on-chain monitoring, making sure the work fit their technical goals, timelines, and stakeholder needs. Managed the full customer journey and coordinated closely with auditors and security experts from initial scoping through delivery."
     },
     {
