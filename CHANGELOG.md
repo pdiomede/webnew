@@ -2,6 +2,9 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2026-10-02
+- **Changed:** tightened the Aave Loop project description (about 30% shorter); bumped the `js/projects.js` cache-buster to `1.3.1`.
+
 ## [1.3.0] - 2026-10-02
 - **Added:** two new cards in the Projects carousel, after HomeVault: **Aave Loop** (aaveloop.com, a DeFi borrow-and-trade loop tracker) and **Nomad Life** (nomadlife.pro, a day tracker and receipt vault for digital nomads), with local logos (`images/aavelooplogo.jpg`, `images/nomadlife.png`).
 - **Changed:** the Url Reporter project logo now loads from `images/urlreporter.jpg` (was `.png`), and the `apple-touch-icon` link on all three pages now points to `images/apple-touch-icon.jpg` (was `.png`).

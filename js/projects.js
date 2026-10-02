@@ -50,7 +50,7 @@
       name:"Aave Loop", url:"https://aaveloop.com/",
       tagline:"Every loop, measured.",
       category:"DeFi · Trade Tracker",
-      blurb:"Borrow a stablecoin, buy ETH, sell it, repay the loan. Aave Loop keeps every stage of each cycle dated and priced in one place, and reports what the round trip actually earned after the real interest paid to borrow, annualized so loops of different lengths compare fairly. Supports USDC, USDT, DAI, GHO, and EURC, with currency conversions at European Central Bank rates for the transaction date."
+      blurb:"Borrow a stablecoin, buy ETH, sell it, repay the loan. Aave Loop logs every step with dates and prices, then shows what each loop really earned after borrowing costs, annualized for fair comparison. Works with USDC, USDT, DAI, GHO, and EURC, converted at ECB rates."
     },
     {
       initials:"NL", color:"#8B7CF6", logo:"images/nomadlife.png",
