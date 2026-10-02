@@ -2,6 +2,9 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2026-10-02
+- **Changed:** tightened the Nomad Life project description (about 30% shorter); bumped the `js/projects.js` cache-buster to `1.3.2`.
+
 ## [1.3.1] - 2026-10-02
 - **Changed:** tightened the Aave Loop project description (about 30% shorter); bumped the `js/projects.js` cache-buster to `1.3.1`.
 

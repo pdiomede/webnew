@@ -57,7 +57,7 @@
       name:"Nomad Life", url:"https://nomadlife.pro",
       tagline:"Know where you spent your year.",
       category:"Travel · Day Tracker",
-      blurb:"A day tracker and receipt vault for digital nomads. Count the days you spend in each country against the 183-day threshold, and keep rental agreements, accommodation invoices, and travel tickets organized alongside the trips they belong to. Private by design: your data is never shared or sold."
+      blurb:"A day tracker and receipt vault for digital nomads. Count your days per country against the 183-day limit, and keep rentals, invoices, and tickets filed with each trip. Your data is never shared or sold."
     },
     {
       initials:"GT", color:"#0A0E1F", logo:"images/graphtoolspro.jpg", logoFull:true,
