@@ -138,4 +138,6 @@ resolves.
 | Url Reporter | `#0A1A2F` |
 | Magellan | `#0E1626` |
 | HomeVault | `#0E1F3D` |
+| Aave Loop | `#9396FA` |
+| Nomad Life | `#8B7CF6` |
 | Graph Tools Pro | `#0A0E1F` |

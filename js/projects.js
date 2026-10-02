@@ -25,7 +25,7 @@
   // ---- Projects ----
   const projects = [
     {
-      initials:"UR", color:"#0A1A2F", logo:"images/urlreporter.png", logoFull:true,
+      initials:"UR", color:"#0A1A2F", logo:"images/urlreporter.jpg", logoFull:true,
       name:"Url Reporter", url:"https://urlreporter.com",
       tagline:"Know what your URL leaks. Without touching it.",
       category:"Security · Web Tool",
@@ -44,6 +44,20 @@
       tagline:"DeFi, Bitcoin, Fiat. One dashboard.",
       category:"Portfolio · Tracker",
       blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin holdings, stablecoin balances at centralised exchanges, and traditional cash, stocks, and bonds, all from one self-hosted database. Deposits and withdrawals are tracked separately, so you always know exactly what you own and what is pure yield."
+    },
+    {
+      initials:"AL", color:"#9396FA", logo:"images/aavelooplogo.jpg", logoFull:true,
+      name:"Aave Loop", url:"https://aaveloop.com/",
+      tagline:"Every loop, measured.",
+      category:"DeFi · Trade Tracker",
+      blurb:"Borrow a stablecoin, buy ETH, sell it, repay the loan. Aave Loop keeps every stage of each cycle dated and priced in one place, and reports what the round trip actually earned after the real interest paid to borrow, annualized so loops of different lengths compare fairly. Supports USDC, USDT, DAI, GHO, and EURC, with currency conversions at European Central Bank rates for the transaction date."
+    },
+    {
+      initials:"NL", color:"#8B7CF6", logo:"images/nomadlife.png",
+      name:"Nomad Life", url:"https://nomadlife.pro",
+      tagline:"Know where you spent your year.",
+      category:"Travel · Day Tracker",
+      blurb:"A day tracker and receipt vault for digital nomads. Count the days you spend in each country against the 183-day threshold, and keep rental agreements, accommodation invoices, and travel tickets organized alongside the trips they belong to. Private by design: your data is never shared or sold."
     },
     {
       initials:"GT", color:"#0A0E1F", logo:"images/graphtoolspro.jpg", logoFull:true,
