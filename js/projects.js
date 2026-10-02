@@ -34,7 +34,7 @@
     {
       initials:"Mg", color:"#0E1626", logo:"images/magellan.jpg", logoFull:true,
       name:"Magellan", url:"https://magellan.money/",
-      tagline:"Automated SOL/USDC Scalping Grid Trader on Solana, Powered by Jupiter",
+      tagline:"Automated Grid Trader for SOL/USDC and Tokenized Stocks on Solana",
       category:"Solana · Trading Bot",
       blurb:"An automated grid trading bot for Solana markets, including tokenized stocks. Staggered buy orders capture short-term swings, guarded by stop-losses, circuit breakers, and daily loss limits. A live dashboard tracks P&L, Telegram alerts allow remote shutdown, and Paper Mode tests strategies on live prices first."
     },
