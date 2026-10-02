@@ -36,14 +36,14 @@
       name:"Magellan", url:"https://magellan.money/",
       tagline:"Automated SOL/USDC Scalping Grid Trader on Solana, Powered by Jupiter",
       category:"Solana · Trading Bot",
-      blurb:"An automated grid trading bot for fast-moving Solana markets. It places staggered buy orders to capture short-term price swings, with circuit breakers, stop-losses, daily loss limits, gas checks, and principal protection. A live dashboard tracks positions, P&L, and trades, while Telegram alerts enable remote monitoring and shutdown. Paper Mode tests strategies using live prices, simulated fees, and slippage before launch."
+      blurb:"An automated grid trading bot for Solana markets, including tokenized stocks. Staggered buy orders capture short-term swings, guarded by stop-losses, circuit breakers, and daily loss limits. A live dashboard tracks P&L, Telegram alerts allow remote shutdown, and Paper Mode tests strategies on live prices first."
     },
     {
       initials:"HV", color:"#0E1F3D", logo:"images/homevaultlogo.jpg", logoFull:true,
       name:"HomeVault", url:"https://homevault.pro",
       tagline:"DeFi, Bitcoin, Fiat. One dashboard.",
       category:"Portfolio · Tracker",
-      blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin holdings, stablecoin balances at centralised exchanges, and traditional cash, stocks, and bonds, all from one self-hosted database. Deposits and withdrawals are tracked separately, so you always know exactly what you own and what is pure yield."
+      blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin, exchange stablecoins, and cash, stocks, and bonds, all in one self-hosted database. Separate deposit and withdrawal tracking shows what you own versus pure yield."
     },
     {
       initials:"AL", color:"#9396FA", logo:"images/aavelooplogo.jpg", logoFull:true,
@@ -64,7 +64,7 @@
       name:"Graph Tools Pro", url:"https://graphtools.pro/",
       tagline:"Useful dashboards for The Graph ecosystem",
       category:"Analytics · The Graph",
-      blurb:"A suite of dashboards and analytics tools for The Graph ecosystem. Monitor network activity and indexer performance, track delegation and curation earnings, analyze query fees, review disputes, manage vesting, and discover subgraphs from one hub. Built for ecosystem participants, these tools turn complex onchain data into clear, actionable insights."
+      blurb:"Dashboards and analytics for The Graph ecosystem. Monitor network and indexer performance, track delegation and curation earnings, analyze query fees, review disputes, manage vesting, and discover subgraphs, all from one hub that turns onchain data into clear insights."
     }
   ];
 

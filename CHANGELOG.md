@@ -2,6 +2,9 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.3] - 2026-10-02
+- **Changed:** tightened the Magellan project description (about 25% shorter) and added tokenized stocks to it; tightened the HomeVault and Graph Tools Pro descriptions (about 25-30% shorter); bumped the `js/projects.js` cache-buster to `1.3.3`.
+
 ## [1.3.2] - 2026-10-02
 - **Changed:** tightened the Nomad Life project description (about 30% shorter); bumped the `js/projects.js` cache-buster to `1.3.2`.
 
