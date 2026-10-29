@@ -2,6 +2,10 @@
 
 Notable changes, newest first. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.5] - 2026-10-29
+- **Changed:** renamed the Aave Loop project card to ETH Round Trip and pointed it at www.ethroundtrip.com; bumped the `js/projects.js` cache-buster to `1.3.5`.
+- **Changed:** reordered the social icons on the splash and in the hero on all three pages to LinkedIn, X, GitHub, Telegram, Email (GitHub moved ahead of Telegram).
+
 ## [1.3.4] - 2026-10-02
 - **Changed:** updated the Magellan tagline to cover tokenized stocks ("Automated Grid Trader for SOL/USDC and Tokenized Stocks on Solana"); bumped the `js/projects.js` cache-buster to `1.3.4`.
 

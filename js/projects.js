@@ -46,11 +46,11 @@
       blurb:"HomeVault tracks DeFi positions across 8 chains (EVM + Solana), native Bitcoin, exchange stablecoins, and cash, stocks, and bonds, all in one self-hosted database. Separate deposit and withdrawal tracking shows what you own versus pure yield."
     },
     {
-      initials:"AL", color:"#9396FA", logo:"images/aavelooplogo.jpg", logoFull:true,
-      name:"Aave Loop", url:"https://aaveloop.com/",
+      initials:"ER", color:"#9396FA", logo:"images/aavelooplogo.jpg", logoFull:true,
+      name:"ETH Round Trip", url:"https://www.ethroundtrip.com",
       tagline:"Every loop, measured.",
       category:"DeFi · Trade Tracker",
-      blurb:"Borrow a stablecoin, buy ETH, sell it, repay the loan. Aave Loop logs every step with dates and prices, then shows what each loop really earned after borrowing costs, annualized for fair comparison. Works with USDC, USDT, DAI, GHO, and EURC, converted at ECB rates."
+      blurb:"Borrow a stablecoin, buy ETH, sell it, repay the loan. ETH Round Trip logs every step with dates and prices, then shows what each loop really earned after borrowing costs, annualized for fair comparison. Works with USDC, USDT, DAI, GHO, and EURC, converted at ECB rates."
     },
     {
       initials:"NL", color:"#8B7CF6", logo:"images/nomadlife.png",
